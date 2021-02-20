@@ -11,5 +11,8 @@
             "name": "Gregory Vicent",
             "email": "gregory142000@gmail.com"
         }
-    ]
+    ],
+    "autoload" : {
+        "psr-4": {"lib\\": "src/lib"}
+    }
 }
