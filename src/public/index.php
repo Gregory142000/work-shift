@@ -7,6 +7,6 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>My root is /src/public/index.php</h1>
+  <h1>Hi Dhruval K., I am your Web App :D</h1>
 </body>
 </html>
