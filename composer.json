@@ -1,0 +1,15 @@
+{
+    "name": "greyvic/work-shift",
+    "description": "App web of work shifts",
+    "type": "project",
+    "require": {
+        "league/plates": "^3.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gregory Vicent",
+            "email": "gregory142000@gmail.com"
+        }
+    ]
+}
