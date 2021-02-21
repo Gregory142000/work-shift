@@ -1,11 +1,12 @@
 <?php
 require '../../vendor/autoload.php';
 
-use League\Plates\Engine;
 use lib\controller\Router;
 
-$template = new Engine('./view');
-
-echo $template->render('admin_path');
-
 $router = new Router(); 
+
+$router->add('/', 'home');
+$router->add('/login', 'login');
+$router->add('/admin', 'admin_path');
+
+$router->start();
