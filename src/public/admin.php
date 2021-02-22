@@ -5,4 +5,4 @@ use lib\controller\GetTemplate;
 
 $template = new GetTemplate();
 
-$template->show_template('home');
+$template->show_template('admin_panel');
