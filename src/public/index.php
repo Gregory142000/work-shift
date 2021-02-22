@@ -10,3 +10,5 @@ $router->add('/login', 'login');
 $router->add('/admin', 'admin_path');
 
 $router->start();
+
+printf($_SERVER['REQUEST_URI']);
