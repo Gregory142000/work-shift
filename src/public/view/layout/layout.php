@@ -14,6 +14,10 @@
 
     <?= $this->section('content'); ?>
 
+    <a href="https://work-shift.herokuapp.com">home</a>
+    <a href="https://work-shift.herokuapp.com/login.php">login</a>
+    <a href="https://work-shift.herokuapp.com/admin.php">admin</a>
+
   </main>
 
 </body>
