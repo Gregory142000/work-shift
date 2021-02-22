@@ -5,7 +5,7 @@ use lib\controller\Router;
 
 $router = new Router(); 
 
-// $router->add('/', 'home');
+$router->add('/', 'home');
 $router->add('/login', 'login');
 $router->add('/admin', 'admin_path');
 
