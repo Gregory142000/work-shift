@@ -1,16 +1,16 @@
 <?php
 namespace lib\model;
 
-require './DbConfig.php';
+require __DIR__ . '/DbConfig.php';
 
 use \PDO;
+
 
 class DbConnection {
   protected $connection;
 
   private $db_name = DB_NAME;
   private $db_host = DB_HOST;
-  private $bd_port = DB_PORT;
   private $db_user = DB_USER;
   private $db_password = DB_PASSWORD;
 

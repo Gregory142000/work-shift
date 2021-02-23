@@ -1,7 +1,7 @@
 <?php
 namespace lib\model;
 
-require '../../../vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 use lib\model\DbConnection;
 use \PDO;
@@ -32,13 +32,6 @@ class DbQuery extends DbConnection {
   public function read() {
     $query ="SELECT * FROM users";
     $sentence = $this->connection->prepare($query);
-    $sentence->execute();
-    while($row = $sentence->fetch(PDO::FETCH_ASSOC)) {
-      print($row['id'] . ' ' . $row['name'] . ' ' . $row['lastname'] . ' ' . $row['date_of_admission'] . ' ' . $row['e_password'] . ' ' . $row['admin'] . '<br>');
-    }
+    return $sentence;
   }
 }
-
-$db = new DbQuery();
-
-$db->read();

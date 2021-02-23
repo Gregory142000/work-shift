@@ -19,7 +19,7 @@
   </div>
 
   <div>
-    
+    <?= $this->insert('admin_page/employees_list'); ?>
   </div>
 </section>
 
