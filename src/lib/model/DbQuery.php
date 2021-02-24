@@ -1,17 +1,19 @@
 <?php
 namespace lib\model;
 
-require __DIR__ . '/vendor/autoload.php';
+// require '../../../vendor/autoload.php';
 
 use lib\model\DbConnection;
 use \PDO;
 
 class DbQuery extends DbConnection {
+  public $employee_data = [];
+
   public function __construct() {
     parent::__construct();
   }
 
-  public function add($name, $lastname, $date, $password, $admin) {
+  public function add($name, $lastname, $date, $password, $admin = 'FALSE') {
     $query = "INSERT INTO users(name, lastname, date_of_admission, e_password, admin) VALUES(:NAM, :LAS, :DAT, :PAS, :ADM)";
     $sentence = $this->connection->prepare($query); 
     $sentence->execute(array(':NAM' => $name, ':LAS' => $lastname, ':DAT' => $date, ':PAS' => $password, ':ADM' => $admin));
@@ -23,15 +25,19 @@ class DbQuery extends DbConnection {
     $sentence->execute(array(':ID' => $id));
   }
 
-  public function update($name, $lastname, $password, $id) {
-    $query = "UPDATE users SET name = :NAM, lastname = :LAS, e_password = :PAS WHERE id = :ID;";
+  public function update($name, $lastname, $id) {
+    $query = "UPDATE users SET name = :NAM, lastname = :LAS WHERE id = :ID;";
     $sentence = $this->connection->prepare($query); 
-    $sentence->execute(array(':NAM' => $name, ':LAS' => $lastname, ':PAS' => $password, ':ID' => $id));
+    $sentence->execute(array(':NAM' => $name, ':LAS' => $lastname, ':ID' => $id));
   }
 
   public function read() {
-    $query ="SELECT * FROM users";
+    $query = "SELECT * FROM users WHERE admin = 'f'";
     $sentence = $this->connection->prepare($query);
-    return $sentence;
+    $sentence->execute();
+    while($row = $sentence->fetch(PDO::FETCH_ASSOC)) {
+      array_push($this->employee_data, $row);
+    }
+    return $this->employee_data;
   }
 }

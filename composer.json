@@ -3,7 +3,8 @@
     "description": "App web of work shifts",
     "type": "project",
     "require": {
-        "league/plates": "^3.4"
+        "league/plates": "^3.4",
+        "nesbot/carbon": "^2.45"
     },
     "license": "MIT",
     "authors": [
