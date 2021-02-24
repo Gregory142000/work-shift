@@ -14,7 +14,7 @@ class DbQuery extends DbConnection {
   }
 
   public function add($name, $lastname, $date, $password, $admin = 'FALSE') {
-    $query = "INSERT INTO users(name, lastname, date_of_admission, e_password, admin) VALUES(:NAM, :LAS, :DAT, :PAS, :ADM)";
+    $query = "INSERT INTO users(first_name, last_name, date_of_admission, e_password, admin) VALUES(:NAM, :LAS, :DAT, :PAS, :ADM)";
     $sentence = $this->connection->prepare($query); 
     $sentence->execute(array(':NAM' => $name, ':LAS' => $lastname, ':DAT' => $date, ':PAS' => $password, ':ADM' => $admin));
   }
@@ -26,7 +26,7 @@ class DbQuery extends DbConnection {
   }
 
   public function update($name, $lastname, $id) {
-    $query = "UPDATE users SET name = :NAM, lastname = :LAS WHERE id = :ID;";
+    $query = "UPDATE users SET first_name = :NAM, last_name = :LAS WHERE id = :ID;";
     $sentence = $this->connection->prepare($query); 
     $sentence->execute(array(':NAM' => $name, ':LAS' => $lastname, ':ID' => $id));
   }

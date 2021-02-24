@@ -7,4 +7,8 @@ class LoginHandler {
     if(!is_string($new_password)) return FALSE;
     if($new_password === $new_password_confirm) return TRUE;
   }
+
+  public function verifyPassword($password) {
+    if(password_verify($password));
+  }
 }
