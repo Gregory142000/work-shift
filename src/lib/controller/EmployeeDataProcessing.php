@@ -30,7 +30,7 @@ class EmployeeDataProcessing {
 
   public function addNewEmployee($first_name, $last_name) {
     $this->formatDate();
-    $this->query_response->addEmployee($first_name, $last_name, $this->date_today, $this->password, 'TRUE');
+    $this->query_response->addEmployee($first_name, $last_name, $this->date_today, $this->password);
   }
 
   public function updateEmployeeData($first_name, $last_name, $id) {
