@@ -1,7 +1,7 @@
 <?php
 namespace lib\controller;
 
-use lib\model\AdminQueries;
+use lib\controller\User;
 
 class LoginHandler {
   public $first_name;
@@ -13,12 +13,33 @@ class LoginHandler {
     if(!is_string($this->password)) return FALSE;
     if($this->password === $new_password_confirm) return TRUE;
   }
+  
+  public function adminAuthentication() {
+    $user_data = new User($this->first_name, $this->last_name);
+    $is_admin = $user_data->is_admin;
+    $password_access = $this->verifyCredentials();
+    
+    if($password_access === TRUE && $is_admin === TRUE) {
+      session_start([
+        'cookie_lifetime' => 1
+      ]);
 
-  public function verifyPassword() {
-    $admin_queries = new AdminQueries();
-    $password_hash = $admin_queries->getAdminPassword($this->first_name, $this->last_name);
-    $password_hash = $password_admin[0]['e_password'];
+      $_SESSION['access'] = TRUE;
 
-    if(password_verify($this->password, $password_hash)); //ToDo: Te quedaste por aqui.
+      header('location: ../admin.php');
+    } else{
+      header('location: ../access-denied.php');
+    }
+  }
+  
+  private function verifyCredentials() {
+    $user_data = new User($this->first_name, $this->last_name);
+    $password_hash = $user_data->password_hash;
+  
+    if(password_verify($this->password, $password_hash)) {
+      return TRUE;
+    } else{
+      return FALSE;
+    }
   }
 }

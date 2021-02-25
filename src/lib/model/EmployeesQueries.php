@@ -12,8 +12,8 @@ class EmployeesQueries extends Queries {
     $this->setLog(
       "INSERT INTO users(first_name, last_name, date_of_admission, e_password, admin) VALUES(:NAM, :LAS, :DAT, :PAS, :ADM)",
       array(
-        ':NAM' => $first_name, 
-        ':LAS' => $last_name, 
+        ':NAM' => strtolower($first_name), 
+        ':LAS' => strtolower($last_name), 
         ':DAT' => $date, 
         ':PAS' => $password, 
         ':ADM' => $admin
@@ -34,8 +34,8 @@ class EmployeesQueries extends Queries {
     $this->setLog(
       "UPDATE users SET first_name = :NAM, last_name = :LAS WHERE id = :ID", 
       array(
-        ':NAM' => $first_name, 
-        ':LAS' => $last_name, 
+        ':NAM' => strtolower($first_name), 
+        ':LAS' => strtolower($last_name), 
         ':ID' => $id
       )
     );

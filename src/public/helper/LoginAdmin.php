@@ -1,14 +1,12 @@
 <?php
 require '../../../vendor/autoload.php';
 
-use lib\model\AdminQueries;
+use lib\controller\LoginHandler;
 
-$admin_list = new AdminQueries();
+$admission = new LoginHandler();
 
-$first_name = $_POST['first-name'];
-$last_name = $_POST['last-name'];
-$password = $_POST['password'];
+$admission->first_name = $_POST['first-name'];
+$admission->last_name = $_POST['last-name'];
+$admission->password = $_POST['password-admin'];
 
-$admin_list = $admin_list->getAdminPassword($first_name, $last_name);
-
-var_dump($admin_list[0]['e_password']);
+$admission->adminAuthentication();

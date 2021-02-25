@@ -7,16 +7,18 @@
   <title><?= $this->e($title); ?></title>
   <!-- MyCSS -->
   <link rel="stylesheet" href="../css/style.css" >
+  <!-- Google Fonts-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <header class="Header">
+    <?= $this->section('header'); ?>
+  </header>
 
   <main>
 
     <?= $this->section('content'); ?>
-
-    <a href="https://work-shift.herokuapp.com">home</a>
-    <a href="https://work-shift.herokuapp.com/login.php">login</a>
-    <a href="https://work-shift.herokuapp.com/admin.php">admin</a>
 
   </main>
 

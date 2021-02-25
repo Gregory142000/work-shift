@@ -1,3 +1,252 @@
+/**** General ****/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: aquamarine;
+  font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin: 4vh 0;
+  text-align: center;
+  color: var(--dark-grey);
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin: 4vh 0;
+  text-align: center;
+  color: var(--dark-grey);
+}
+
+h3 {
+  margin: 0 2vw;
+  font-size: 1.5rem;
+  color: var(--dark-grey);
+}
+
+p {
+  font-size: 1rem;
+}
+
+/**** Var ****/
+
+:root {
+  --white: #fff;
+  --grey: #f4f9f9;
+  --dark-grey: #5b5b5b;
+  --main-color: #e45826;
+  --main-color-light: #ff8b61;
+  --black: #000;
+}
+
+/**** Global ****/
+
+.container-box {
+  background-color: var(--grey);
+  box-shadow: 5px 5px 15px var(--black);
+  width: 80%;
+  min-height: 100px;
+  margin: 4vh auto;
+}
+
+.container-box--background {
+  background-color: var(--dark-grey);
+}
+
+.button {
+  width: 100px;
+  height: 30px;
+  margin: 10px;
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 5px;
+  color: var(--white);
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--main-color-light);
+  color: var(--dark-grey);
+}
+
+.link-button {
+  width: 100px;
+  height: 30px;
+  margin: 10px;
+  text-decoration: none;
+  color: var(--white);
+  background: var(--main-color);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .9rem;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+.link-button:hover {
+  background-color: var(--main-color-light);
+  color: var(--dark-grey);
+}
+
+.margin-height {
+  margin: 10vh 0;
+}
+
+.main-color {
+  color: var(--main-color);
+}
+
+.input-text {
+  width: 60%;
+  height: 3.3vh;
+  margin: 1rem;
+  padding-left: 1vw;
+  border: solid 2px var(--main-color);
+}
+
+/**** Header ****/
+
+.Header {
+  background-color: var(--dark-grey);
+  min-height: 5vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.Header__link {
+  color: var(--grey);
+  text-decoration: none;
+  margin: 0 2vw;
+  padding: 0 10px;
+  transition: all .3s linear;
+}
+
+.Header__link:hover {
+  border-radius: 5px;
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+}
+
+/**** Admin Console ****/
+
+.AdminPanel {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.AdminPanel__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.AdminPanel__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.AdminPanel__employee {
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+.AdminPanel__info {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.AdminPanel__buttonBox {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+/**** Login Admin ****/
+
+.LoginAdmin {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.LoginAdmin__imgBox {
+  margin: auto;
+  width: 100%;
+  min-height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.LoginAdmin__img {
+  width: 150px;
+  background-color: var(--white);
+  border-radius: 50%;
+}
+
+.LoginAdmin__inputBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-grey);
+  width: 60%;
+  margin: 4vh auto;
+  border-radius: 5px;
+}
+
+/**** Access Denied ****/
+
+.AccessDenied {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.AccessDenied__text {
+  color: var(--white);
+  font-size: 1.3rem;
+}
+
+/**** Media Query ****/
+
+@media (max-width: 800px) {
+  .LoginAdmin {
+    width: 80%;
+  }
+}
+
+@media (max-width: 630px) {
+  .AdminPanel {
+    grid-template-columns: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .LoginAdmin__inputBox {
+    width: 80%;
+  }
+}
+
+@media (max-width: 315px) {
+  .AdminPanel__buttons {
+    flex-direction: column;
+  }
+  
+  .AdminPanel__info {
+    display: flex;
+    flex-direction: column;
+  }
 }
