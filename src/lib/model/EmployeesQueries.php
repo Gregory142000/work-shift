@@ -42,7 +42,7 @@ class EmployeesQueries extends Queries {
   }
 
   public function readEmployee() {
-    $employee_list = $this->getLog("SELECT * FROM users WHERE admin = 'f'");
+    $employee_list = $this->getLog("SELECT * FROM users WHERE admin = 'f' ORDER BY date_of_admission");
     return $employee_list;
   }
 }

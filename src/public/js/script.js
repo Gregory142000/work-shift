@@ -1,4 +1,4 @@
-import CRUDEmployee from './CRUDEmployee.js'
+import CRUDEmployee from './adminPanel/CRUDEmployee.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   CRUDEmployee()

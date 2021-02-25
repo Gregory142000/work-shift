@@ -10,6 +10,8 @@
   <!-- Google Fonts-->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- FullCalendar -->
+  <?= $this->section('links_full_calendar') ?>
 </head>
 <body>
   <header class="Header">
