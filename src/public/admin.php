@@ -1,9 +1,9 @@
 <?php
-session_start([
-  'cookie_lifetime' => 1
-]);
+// session_start([
+//   'cookie_lifetime' => 1
+// ]);
 
-if(!isset($_SESSION['access'])) header('location: ./access-denied.php');
+// if(!isset($_SESSION['access'])) header('location: ./access-denied.php');
 
 // unset($_SESSION['access']);
 
