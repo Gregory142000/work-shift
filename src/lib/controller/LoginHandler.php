@@ -20,9 +20,7 @@ class LoginHandler {
     $password_access = $this->verifyCredentials();
     
     if($password_access === TRUE && $is_admin === TRUE) {
-      session_start([
-        'cookie_lifetime' => 1
-      ]);
+      session_start();
 
       $_SESSION['access'] = TRUE;
 

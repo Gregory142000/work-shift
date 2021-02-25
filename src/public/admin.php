@@ -1,7 +1,5 @@
 <?php
-session_start([
-  'cookie_lifetime' => 1
-]);
+session_start();
 
 if(!isset($_SESSION['access'])) header('location: ./access-denied.php');
 
