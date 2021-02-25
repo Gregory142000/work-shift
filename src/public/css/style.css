@@ -163,8 +163,13 @@ p {
 
 .AdminPanel__info {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.AdminPanel__p {
+  margin: 5px;
 }
 
 .AdminPanel__buttonBox {

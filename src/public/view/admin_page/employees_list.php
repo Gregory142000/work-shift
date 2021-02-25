@@ -8,13 +8,15 @@ foreach($employees->employees_list as $employee) :
   $first_name = ucfirst($employee['first_name']);
   $last_name = ucfirst($employee['last_name']);
   $id = $employee['id'];
+  $admission_date = $employee['date_of_admission'];
 
 ?>
 
   <div class="AdminPanel__employee  container-box">
     <div class="AdminPanel__info">
-      <p>ID: <b><?= $id; ?></b></p>
-      <p>Name: <b><?= $first_name; ?> <?= $last_name; ?></b></p>
+      <p class="AdminPanel__p">ID: <b><?= $id; ?></b></p>
+      <p class="AdminPanel__p">Name: <b><?= $first_name; ?> <?= $last_name; ?></b></p>
+      <p class="AdminPanel__p">Admission Date: <b><?= $admission_date; ?></b></p>
     </div>
     <div class="AdminPanel__buttonBox">
       <button class="update-button  button">Update</button>
