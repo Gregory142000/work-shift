@@ -2,16 +2,15 @@
 namespace lib\controller;
 
 use lib\model\EmployeesQueries;
-use lib\controller\LoginHandler;
 use Carbon\Carbon;
 use \PDO;
 
 class EmployeeDataProcessing {
+  public $employees_list = [];
+
   private $query_response;
   private $password;
   private $date_today;
-
-  public $employees_list = [];
 
   public function __construct() {
     $this->query_response = new EmployeesQueries();
@@ -19,9 +18,9 @@ class EmployeeDataProcessing {
   }
 
   public function passwordHash($new_password, $new_password_confirm) {
-    $password_per_password = new LoginHandler();
-    $password_per_password->password = $new_password;
-    $are_they_equal = $password_per_password->comparePassword($new_password_confirm);
+    if($new_password === "" || $new_password_confirm === "") return FALSE;
+    if(!is_string($new_password)) return FALSE;
+    $are_they_equal = $new_password === $new_password_confirm ? TRUE : FALSE;
     if($are_they_equal) {
       $new_password_with_hash = password_hash($new_password, PASSWORD_DEFAULT, ['cost' => 16]);
       $this->password = $new_password_with_hash;

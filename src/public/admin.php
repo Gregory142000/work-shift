@@ -3,9 +3,7 @@ session_start([
   'cookie_lifetime' => 1800
 ]);
 
-if(!isset($_SESSION['access'])) header('location: ./access-denied.php');
-
-// unset($_SESSION['access']);
+if(!isset($_SESSION['access-admin'])) header('location: ./access-denied.php');
 
 require '../../vendor/autoload.php';
 

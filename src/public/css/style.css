@@ -75,6 +75,12 @@ p {
   color: var(--dark-grey);
 }
 
+.button[disabled] {
+  background-color: var(--grey);
+  color: var(--dark-grey);
+  border: 1px solid var(--dark-grey);
+}
+
 .link-button {
   width: 100px;
   height: 30px;
@@ -116,24 +122,89 @@ p {
 
 .Header {
   background-color: var(--dark-grey);
-  min-height: 5vh;
+  height: 5vh;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-around;
   align-items: center;
+  transition: all .5s linear;
+
+}
+
+.Header--auto-height {
+  height: auto;
 }
 
 .Header__link {
   color: var(--grey);
   text-decoration: none;
-  margin: 0 2vw;
+  margin: 0 2vh;
+  white-space: nowrap;
   padding: 0 10px;
   transition: all .3s linear;
+  order: 2;
 }
 
 .Header__link:hover {
   border-radius: 5px;
   border: 1px solid var(--main-color);
   color: var(--main-color);
+}
+
+.Header__message {
+  color: var(--white);
+  font-size: 3.5rem;
+  margin: 0 1rem;
+  opacity: 0;
+  order: 0;
+  transition: all 1s linear;
+}
+
+.Header__title {
+  margin: 1rem;
+  padding: .5rem;
+  background-color: var(--dark-grey);
+  display: inline-block;
+  color: var(--white);
+  border-radius: 5px;
+}
+
+.Header__logInBox {
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(0, -150%);
+  transition: all .5s linear;
+  max-width: 300px;
+  margin: 4vh 4vh;
+  order: 0;
+}
+
+.Header__inputBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Header__logInBox--active {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(0, 0%);
+}
+
+.Header__logOutBox {
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(0, -250%);
+  transition: all .5s linear;
+  width: 300px;
+  margin: 4vh 4vh;
+  order: 0;
+}
+
+.Header__logOutBox--active {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(0, 0%);
 }
 
 /**** Admin Console ****/

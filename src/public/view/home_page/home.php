@@ -1,3 +1,15 @@
+<?php
+use lib\controller\Session;
+
+$session = new Session();
+$employee = '';
+
+if(isset($_SESSION['access'])) {
+  $employee = $_SESSION['access'];
+}
+
+?>
+
 <?php $this->layout('layout/layout', [
   'title' => 'home'
 ]); ?>
@@ -12,9 +24,15 @@
 
 <?php $this->start('header'); ?>
 
+<?= $this->insert('home_page/log_in'); ?>
+
+<?= $this->insert('home_page/log_out'); ?>
+
 <nav class=="Header__nav">
-  <a class="Header__link" href="#">Log in</a>
+  <a class="Header__link" id="link-logIn" href="#">Log in</a>
 </nav>
+
+<input type="hidden" id="employee-login" name="employee-login" value="<?= $employee; ?>" />
 
 <?php $this->stop(); ?>
 
@@ -23,44 +41,4 @@
 
 <div id="calendar" ></div>
 
-<form action="" method="POST">
-
-  <table>
-    <tr>
-      <th>S</th>
-      <th>Mon</th>
-      <th>Tue</th>
-      <th>Wed</th>
-      <th>Thu</th>
-      <th>Fri</th>
-      <th>Sat</th>
-      <th>Sun</th>
-      <th>P</th>
-    </tr>
-    <tr>
-      <td>
-        <Select>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-        </Select>
-      </td>
-      <td><input class="button" type="submit" value="select"></td>
-      <td><input class="button" type="submit" value="select"></td>
-      <td><input class="button" type="submit" value="select"></td>
-      <td><input class="button" type="submit" value="select"></td>
-      <td><input class="button" type="submit" value="select"></td>
-      <td><input class="button" type="submit" value="select"></td>
-      <td><input class="button" type="submit" value="select"></td>
-      <td>Null</td>
-    </tr>
-  </table>
-
-</form>
+<?= $this->insert('home_page/table_select_work'); ?>

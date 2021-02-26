@@ -2,41 +2,54 @@
 namespace lib\controller;
 
 use lib\controller\User;
+use lib\controller\Session;
 
 class LoginHandler {
-  public $first_name;
-  public $last_name;
-  public $password;
+  public static $first_name;
+  public static $last_name;
+  public static $password;
 
-  public function comparePassword($new_password_confirm) {
-    if($this->password === "" || $new_password_confirm === "") return FALSE;
-    if(!is_string($this->password)) return FALSE;
-    if($this->password === $new_password_confirm) return TRUE;
+  private $user_data;
+
+  function __construct() {
+    $this->user_data = new User(self::$first_name, self::$last_name);
   }
-  
+
   public function adminAuthentication() {
-    $user_data = new User($this->first_name, $this->last_name);
-    $is_admin = $user_data->is_admin;
+    $is_admin = $this->user_data->is_admin;
     $password_access = $this->verifyCredentials();
     
     if($password_access === TRUE && $is_admin === TRUE) {
-      session_start([
-        'cookie_lifetime' => 1800
-      ]);
+      $session = new Session();
+      $session->id = $this->user_data->id;
 
-      $_SESSION['access'] = TRUE;
+      $_SESSION['access-admin'] = $session->id;
 
       header('location: ../admin.php');
     } else{
       header('location: ../access-denied.php');
     }
   }
+
+  public function employeeAuthentication() {
+    $password_access = $this->verifyCredentials();
+
+    if($password_access) {
+      $session = new Session();
+      $session->id = $this->user_data->id;
+
+      $_SESSION['access'] = $session->id;
+
+      header('location: /');
+    } else{
+      header('location: ../access-denied.php');
+    }
+  }
   
   private function verifyCredentials() {
-    $user_data = new User($this->first_name, $this->last_name);
-    $password_hash = $user_data->password_hash;
+    $password_hash = $this->user_data->password_hash;
   
-    if(password_verify($this->password, $password_hash)) {
+    if(password_verify(self::$password, $password_hash)) {
       return TRUE;
     } else{
       return FALSE;
