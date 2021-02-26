@@ -62,6 +62,6 @@
   <input type="hidden" id="id-employee" name="id-employee" value="">
 
   <input type="submit" class="button" value="Send" disabled>
-  <button class="button" id="reseat-button">Reseat</button>
+  <button class="button" id="reseat-button" disabled>Reseat</button>
 
 </form>

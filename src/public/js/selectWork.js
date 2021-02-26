@@ -1,5 +1,6 @@
 export default function $buttonSelectWork() {
   const $employeeLogin = document.getElementById('employee-login'),
+        $messageLogOut = document.getElementById('Header-message-logOut'),
         $idEmployee = document.getElementById('id-employee'),
         $reseatButton = document.getElementById('reseat-button'),
         $buttons = document.querySelectorAll('.button[disabled]'),
@@ -9,6 +10,8 @@ export default function $buttonSelectWork() {
   if(sessionId !== ''){
     sessionStorage.setItem('session', sessionId);
 
+    $messageLogOut.style.display = 'inline-block';
+    
     $idEmployee.value = sessionStorage.getItem('session');
 
     $buttons.forEach((el) => el.removeAttribute('disabled'));

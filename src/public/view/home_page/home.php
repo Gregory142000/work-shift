@@ -2,10 +2,12 @@
 use lib\controller\Session;
 
 $session = new Session();
-$employee = '';
+$employee_id = '';
+$employee_name = '';
 
 if(isset($_SESSION['access'])) {
-  $employee = $_SESSION['access'];
+  $employee_id = $_SESSION['access'];
+  $employee_name = $_SESSION['employee'];
 }
 
 ?>
@@ -26,13 +28,15 @@ if(isset($_SESSION['access'])) {
 
 <?= $this->insert('home_page/log_in'); ?>
 
-<?= $this->insert('home_page/log_out'); ?>
+<?= $this->insert('home_page/log_out', [
+  'employee' => $employee_name
+]); ?>
 
 <nav class=="Header__nav">
   <a class="Header__link" id="link-logIn" href="#">Log in</a>
 </nav>
 
-<input type="hidden" id="employee-login" name="employee-login" value="<?= $employee; ?>" />
+<input type="hidden" id="employee-login" name="employee-login" value="<?= $employee_id; ?>" />
 
 <?php $this->stop(); ?>
 

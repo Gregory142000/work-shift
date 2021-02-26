@@ -19,7 +19,7 @@ export default function headerController() {
       $linkLogin.style.display = 'none';
       $headerLogOut.style.display = 'none';
 
-      $headerMessage.style.opacity = '1';
+      $headerMessage.style.display = 'inline-block';
       
       $header.classList.add('Header--auto-height');
       

@@ -39,6 +39,7 @@ class LoginHandler {
       $session->id = $this->user_data->id;
 
       $_SESSION['access'] = $session->id;
+      $_SESSION['employee'] = $this->user_data->first_name . ' ' . $this->user_data->last_name;
 
       header('location: /');
     } else{
