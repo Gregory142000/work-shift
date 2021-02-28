@@ -7,7 +7,8 @@ export default function headerController() {
 
   if(sessionStorage.getItem('session')) { 
     $linkLogin.style.display = 'none';
-    $headerLogIn.style.display = 'none'
+    $headerLogIn.style.display = 'none';
+    $headerMessage.style.display = 'none';
 
     $header.classList.add('Header--auto-height');
 

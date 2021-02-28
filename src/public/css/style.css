@@ -7,6 +7,7 @@
 
 body {
   font-family: 'Raleway', sans-serif;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -27,6 +28,22 @@ h3 {
   margin: 0 2vw;
   font-size: 1.5rem;
   color: var(--dark-grey);
+}
+
+h5 {
+  text-align: center;
+}
+
+select {
+  padding: .2rem;
+  border: solid 2px var(--dark-grey);
+  border-radius: 5px;
+  font-size: 1.1rem;
+}
+
+option {
+  background-color: var(--dark-grey);
+  color: var(--white);
 }
 
 p {
@@ -214,11 +231,13 @@ p {
   width: 300px;
   margin: 4vh 4vh;
   order: 0;
+  display: none;
 }
 
 .Header__logOutBox--active {
   visibility: visible;
   opacity: 1;
+  display: inline-block;
   transform: translate(0, 0%);
 }
 
@@ -311,6 +330,47 @@ p {
   font-size: 1.3rem;
 }
 
+/**** Calendar****/
+
+.Calendar {
+  width: 80%;
+  margin: 4vh auto;
+}
+
+.Calendar__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 80%;
+  margin: 4vh auto;
+}
+
+.Calendar__console {
+  margin: 4vh auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.Calendar__shift {
+  margin: 0 2vw;
+}
+
+.Calendar__h5-bad {
+  margin-bottom: 10px;
+}
+
+.Calendar__buttonsBox {
+  display: flex;
+  margin: 2vh 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgb(206, 206, 206);
+}
+
 /**** Media Query ****/
 
 @media (max-width: 800px) {
@@ -326,8 +386,39 @@ p {
 }
 
 @media (max-width: 500px) {
+  .Header {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .Header__link {
+    display: none;
+  }
+
+  .Header__logInBox {
+    transform: translate(0, 0%);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .Header__logOutBox {
+    max-width: 250px;
+  }
+
+  .Header__message--active {
+    display: inline-block;
+    margin: 5vh 0;
+    font-size: 2.5rem;
+  }
+
   .LoginAdmin__inputBox {
     width: 80%;
+  }
+}
+
+@media (max-width: 460px) {
+  .Calendar {
+    width: 100%;
   }
 }
 

@@ -1,20 +1,11 @@
-<form action="../helper/ManageWorkShift.php" method="POST">
+<h2 class="margin-height">Choose your turn</h2>
 
-  <table>
-    <tr>
-      <th>S</th>
-      <th>Mon</th>
-      <th>Tue</th>
-      <th>Wed</th>
-      <th>Thu</th>
-      <th>Fri</th>
-      <th>Sat</th>
-      <th>Sun</th>
-      <th>P</th>
-    </tr>
-    <tr>
-      <td>
-        <select name="shift-number">
+<form class="Calendar__form  container-box" action="../helper/ManageWorkShift.php" method="POST">
+
+  <div class="Calendar__console">
+    <div class="Calendar__shift">
+      <h5 class="Calendar__h5-bad">Shift</h5>
+      <select name="shift-number">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -26,42 +17,49 @@
           <option value="9">9</option>
           <option value="10">10</option>
         </select>
-      </td>
-      <td>
-        <button class="button  button-select" disabled>Select</button>
-        <input type="hidden" class="week-day" name="monday" value="">
-      </td>
-      <td>
-        <button class="button  button-select" disabled>Select</button>
-        <input type="hidden" class="week-day" name="tuesday" value="">
-      </td>
-      <td>
-        <button class="button  button-select" disabled>Select</button>
-        <input type="hidden" class="week-day" name="wednesday" value="">
-      </td>
-      <td>
-        <button class="button  button-select" disabled>Select</button>
-        <input type="hidden" class="week-day" name="thursday" value="">
-      </td>
-      <td>
+    </div>
+    <div>
+      <h5>Mon</h5>
+      <button class="button  button-select" disabled>Select</button>
+      <input type="hidden" class="week-day" name="monday" value="">
+    </div>
+    <div>
+      <h5>Tue</h5>
+      <button class="button  button-select" disabled>Select</button>
+      <input type="hidden" class="week-day" name="tuesday" value="">
+    </div>
+    <div>
+      <h5>Wed</h5>
+      <button class="button  button-select" disabled>Select</button>
+      <input type="hidden" class="week-day" name="wednesday" value="">
+    </div>
+    <div>
+      <h5>Thu</h5>
+      <button class="button  button-select" disabled>Select</button>
+      <input type="hidden" class="week-day" name="thursday" value="">
+    </div>
+    <div>
+      <h5>Fri</h5>
         <button class="button  button-select" disabled>Select</button>
         <input type="hidden" class="week-day" name="friday" value="">
-      </td>
-      <td>
-        <button class="button  button-select" disabled>Select</button>
-        <input type="hidden" class="week-day" name="saturday" value="">
-      </td>
-      <td>
-        <button class="button  button-select" disabled>Select</button>
-        <input type="hidden" class="week-day" name="sunday" value="">
-      </td>
-      <td>Null</td>
-    </tr>
-  </table>
+    </div>
+    <div>
+      <h5>Sat</h5>
+      <button class="button  button-select" disabled>Select</button>
+      <input type="hidden" class="week-day" name="saturday" value="">
+    </div>
+    <div>
+      <h5>Sun</h5>
+      <button class="button  button-select" disabled>Select</button>
+      <input type="hidden" class="week-day" name="sunday" value="">
+    </div>
+  </div>
 
   <input type="hidden" id="id-employee" name="employee-id" value="">
 
-  <input type="submit" class="button" value="Send" disabled>
-  <button class="button" id="reseat-button" disabled>Reseat</button>
+  <div class="Calendar__buttonsBox">
+    <input type="submit" class="button" value="Send" disabled>
+    <button class="button" id="reseat-button" disabled>Reseat</button>
+  </div>
 
 </form>

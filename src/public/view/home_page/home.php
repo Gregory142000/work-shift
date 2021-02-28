@@ -24,7 +24,12 @@ if(isset($_SESSION['access'])) {
 
 <?php $this->stop(); ?>
 
+
 <?php $this->start('header'); ?>
+
+<nav class=="Header__nav">
+  <a class="Header__link" id="link-logIn" href="#">Log in</a>
+</nav>
 
 <?= $this->insert('home_page/log_in'); ?>
 
@@ -32,17 +37,13 @@ if(isset($_SESSION['access'])) {
   'employee' => $employee_name
 ]); ?>
 
-<nav class=="Header__nav">
-  <a class="Header__link" id="link-logIn" href="#">Log in</a>
-</nav>
-
 <input type="hidden" id="employee-login" name="employee-login" value="<?= $employee_id; ?>" />
 
 <?php $this->stop(); ?>
 
-<h1>I am Home</h1>
-<h2>Hi Dhruval K., I am your Web App :D</h2>
 
-<div id="calendar" ></div>
+<h1 class="margin-height">Work shift schedule</h1>
+
+<div id="calendar" class="Calendar" ></div>
 
 <?= $this->insert('home_page/table_select_work'); ?>
