@@ -1,4 +1,4 @@
-<form action="" method="POST">
+<form action="../helper/ManageWorkShift.php" method="POST">
 
   <table>
     <tr>
@@ -14,7 +14,7 @@
     </tr>
     <tr>
       <td>
-        <Select>
+        <select name="shift-number">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -25,7 +25,7 @@
           <option value="8">8</option>
           <option value="9">9</option>
           <option value="10">10</option>
-        </Select>
+        </select>
       </td>
       <td>
         <button class="button  button-select" disabled>Select</button>
@@ -59,7 +59,7 @@
     </tr>
   </table>
 
-  <input type="hidden" id="id-employee" name="id-employee" value="">
+  <input type="hidden" id="id-employee" name="employee-id" value="">
 
   <input type="submit" class="button" value="Send" disabled>
   <button class="button" id="reseat-button" disabled>Reseat</button>

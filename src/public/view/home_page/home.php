@@ -20,7 +20,7 @@ if(isset($_SESSION['access'])) {
 
 <link href='../js/fullCalendar/lib/main.css' rel='stylesheet' />
 <script src='../js/fullCalendar/lib/main.js'></script>
-<script src="../js/calendar.js"></script>
+<script src="../js/startCalendar.js" type="module"></script>
 
 <?php $this->stop(); ?>
 

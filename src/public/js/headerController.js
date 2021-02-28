@@ -5,7 +5,7 @@ export default function headerController() {
         $headerMessage = document.querySelector('.Header__message'),
         $headerLogOut = document.querySelector('.Header__logOutBox');
 
-  if(sessionStorage.getItem('session')) {
+  if(sessionStorage.getItem('session')) { 
     $linkLogin.style.display = 'none';
     $headerLogIn.style.display = 'none'
 

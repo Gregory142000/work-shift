@@ -118,6 +118,10 @@ p {
   border: solid 2px var(--main-color);
 }
 
+.p::first-letter {
+  text-transform: uppercase;
+}
+
 /**** Header ****/
 
 .Header {

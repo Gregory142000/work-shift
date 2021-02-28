@@ -7,11 +7,11 @@
     <form class="Header__form" action="../helper/LoginEmployee.php" method="POST">
       <div class="Header__inputBox">
         <label for="first-name">First Name</label>
-        <input class="input-text" type="text" name="first-name" id="first-name">
+        <input autocomplete="off" class="input-text" type="text" name="first-name" id="first-name">
       </div>
       <div class="Header__inputBox">
         <label for="last-name">Last Name</label>
-        <input class="input-text" type="text" name="last-name" id="last-name">
+        <input autocomplete="off" class="input-text" type="text" name="last-name" id="last-name">
       </div>
       <div class="Header__inputBox">
         <label for="password">Password</label>
