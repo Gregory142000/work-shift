@@ -377,6 +377,10 @@ p {
   .LoginAdmin {
     width: 80%;
   }
+  .Calendar {
+    width: 100%;
+    height: 1000px;
+  }
 }
 
 @media (max-width: 630px) {
@@ -413,12 +417,6 @@ p {
 
   .LoginAdmin__inputBox {
     width: 80%;
-  }
-}
-
-@media (max-width: 460px) {
-  .Calendar {
-    width: 100%;
   }
 }
 

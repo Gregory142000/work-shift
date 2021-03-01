@@ -8,6 +8,12 @@ export default function calendar(worksOfWeek) {
         end: false,
       },
       showNonCurrentDates: false,
+      dayMaxEventRows: true,
+      views: {
+        timeGrid: {
+          dayMaxEventRows: 10
+        },
+      }
     });
     calendar.render();
   });

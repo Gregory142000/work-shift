@@ -5,7 +5,7 @@
   <div class="Calendar__console">
     <div class="Calendar__shift">
       <h5 class="Calendar__h5-bad">Shift</h5>
-      <select name="shift-number">
+      <select name="shift-number" id="select-calendar">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -20,37 +20,37 @@
     </div>
     <div>
       <h5>Mon</h5>
-      <button class="button  button-select" disabled>Select</button>
+      <button class="button  button-select" id="monday-btn" disabled>Select</button>
       <input type="hidden" class="week-day" name="monday" value="">
     </div>
     <div>
       <h5>Tue</h5>
-      <button class="button  button-select" disabled>Select</button>
+      <button class="button  button-select" id="tuesday-btn" disabled>Select</button>
       <input type="hidden" class="week-day" name="tuesday" value="">
     </div>
     <div>
       <h5>Wed</h5>
-      <button class="button  button-select" disabled>Select</button>
+      <button class="button  button-select" id="wednesday-btn" disabled>Select</button>
       <input type="hidden" class="week-day" name="wednesday" value="">
     </div>
     <div>
       <h5>Thu</h5>
-      <button class="button  button-select" disabled>Select</button>
+      <button class="button  button-select" id="thursday-btn" disabled>Select</button>
       <input type="hidden" class="week-day" name="thursday" value="">
     </div>
     <div>
       <h5>Fri</h5>
-        <button class="button  button-select" disabled>Select</button>
+        <button class="button  button-select" id="friday-btn" disabled>Select</button>
         <input type="hidden" class="week-day" name="friday" value="">
     </div>
     <div>
       <h5>Sat</h5>
-      <button class="button  button-select" disabled>Select</button>
+      <button class="button  button-select" id="saturday-btn" disabled>Select</button>
       <input type="hidden" class="week-day" name="saturday" value="">
     </div>
     <div>
       <h5>Sun</h5>
-      <button class="button  button-select" disabled>Select</button>
+      <button class="button  button-select" id="sunday-btn" disabled>Select</button>
       <input type="hidden" class="week-day" name="sunday" value="">
     </div>
   </div>
@@ -59,7 +59,6 @@
 
   <div class="Calendar__buttonsBox">
     <input type="submit" class="button" value="Send" disabled>
-    <button class="button" id="reseat-button" disabled>Reseat</button>
   </div>
 
 </form>
