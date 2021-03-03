@@ -49,7 +49,7 @@ if(isset($_SESSION['access'])) {
 </section>
 
 <?php if($employee_id !== ''): ?>
-<section>
+<section class="console-section">
   <?= $this->insert('home_page/table_select_work'); ?>
 </section>
 <?php endif; ?>

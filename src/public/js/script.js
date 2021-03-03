@@ -4,12 +4,15 @@ import headerController from './headerController.js';
 import noAccessShift from './selectWorkZone/noAccessShift.js';
 import clearSessionStorage from './clearSessionStorage.js';
 
-let pathname = window.location.pathname;
+let pathname = window.location.pathname,
+  $consoleSection = document.querySelector('.console-section');
 
 document.addEventListener("DOMContentLoaded", () => {
+  console.log($consoleSection)
   if(pathname === '/') {
+    if($consoleSection) noAccessShift();
+    
     clearSessionStorage();
-    noAccessShift();
     selectWork();
     headerController();
   } 

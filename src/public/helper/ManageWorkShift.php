@@ -4,7 +4,6 @@ require '../../../vendor/autoload.php';
 use lib\controller\WorkShift;
 
 $work_shift = new WorkShift();
-
 $shift_days = [];
 
 $shift_number = $_POST['shift-number'];
@@ -16,6 +15,10 @@ foreach($_POST as $week_day => $value) {
   }
 }
 
-$work_shift->selectWeekDays($shift_days, $shift_number, $employee_id);
-
-header('location: /');
+try{
+  $work_shift->selectWeekDays($shift_days, $shift_number, $employee_id);
+  
+  header('location: /');
+} catch(Exception $e) {
+  header('location: /');
+}
