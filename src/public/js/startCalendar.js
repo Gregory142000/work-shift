@@ -1,6 +1,9 @@
 import startCalendar from './fullCalendar/calendar.js';
 import selectShifts from './fullCalendar/selectShifts.js';
 
+const $loader = document.getElementById('loader'),
+      $calendarSection = document.querySelector('.calendar-section');
+
 fetch('../helper/WorkShiftAPI.php')
   .then((res) => res.json())
   .then((res) => {
@@ -9,12 +12,20 @@ fetch('../helper/WorkShiftAPI.php')
     return weekShifts;
   })
   .then((worksOfWeek) => {
-    const $loader = document.getElementById('loader');
-
     $loader.style.display = 'none';
-    
+
     startCalendar(worksOfWeek)
   })
   .catch((error) => {
-    console.log(error); //Crea una solución para el catch
+    const errorMessage = `
+      <div class="container-box  justify-center">
+        <p>Error with Fetch connection: <span class="red-color">${error}</span></p>
+      </div>
+    `;
+
+    $loader.style.display = 'none';
+
+    $calendarSection.insertAdjacentHTML('afterend', errorMessage);
+
+    console.log('Error with Fetch connection: ' + error);
   });

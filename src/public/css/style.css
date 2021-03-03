@@ -127,6 +127,10 @@ p {
   color: var(--main-color);
 }
 
+.red-color {
+  color: rgb(160, 0, 0);
+}
+
 .input-text {
   width: 60%;
   height: 3.3vh;
@@ -142,6 +146,12 @@ p {
 .calendar-section {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.justify-center {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
