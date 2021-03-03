@@ -1,10 +1,8 @@
-export default function selectShifts(resAPI) {
-  let weekShifts = [],
-    count = 1;
+export default function selectShifts(fetchCalendar) {
+  let count = 1;
 
-  resAPI.forEach((el) => {
-    let shiftObject = {},
-      weekDays = [],
+  fetchCalendar.response.forEach((el) => {
+    let weekDays = [],
       employeeId = null;
 
     if (el.sunday) {
@@ -36,14 +34,10 @@ export default function selectShifts(resAPI) {
       employeeId = el.saturday;
     }
 
-    shiftObject = {
+    fetchCalendar.calendar.addEvent({
       id: count++,
       title: `${el.shift_number} | Employee: ${employeeId}`,
       daysOfWeek: weekDays,
-    };
-
-    weekShifts.push(shiftObject);
+    });
   });
-
-  return weekShifts;
 }
