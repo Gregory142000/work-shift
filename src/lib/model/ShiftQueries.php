@@ -19,7 +19,7 @@ class ShiftQueries extends Queries {
 
   public function shiftShow (){
     $shifts = $this->getLog(
-      "SELECT * FROM shifts"
+      "SELECT * FROM shifts ORDER BY shift_number"
     );
 
     return $shifts;

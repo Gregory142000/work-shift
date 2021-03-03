@@ -41,9 +41,13 @@ if(isset($_SESSION['access'])) {
 
 <?php $this->stop(); ?>
 
+<section class="calendar-section">
+  <h1 class="margin-height">Work shift schedule</h1>
 
-<h1 class="margin-height">Work shift schedule</h1>
+  <div id="calendar" class="Calendar" ></div>
+  <img id="loader" src="../img/Spinner-1s-200px.svg" alt="Loader...">
+</section>
 
-<div id="calendar" class="Calendar" ></div>
-
-<?= $this->insert('home_page/table_select_work'); ?>
+<section>
+  <?= $this->insert('home_page/table_select_work'); ?>
+</section>
