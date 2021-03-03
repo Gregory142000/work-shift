@@ -1,4 +1,4 @@
-import startCalendar from './fullCalendar/calendar.js';
+import calendar from './fullCalendar/calendar.js';
 import selectShifts from './fullCalendar/selectShifts.js';
 
 const $loader = document.getElementById('loader'),
@@ -14,7 +14,7 @@ fetch('../helper/WorkShiftAPI.php')
   .then((worksOfWeek) => {
     $loader.style.display = 'none';
 
-    startCalendar(worksOfWeek)
+    calendar(worksOfWeek);
   })
   .catch((error) => {
     const errorMessage = `
