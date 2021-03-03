@@ -4,6 +4,6 @@
   <h4 class="Header__title">Log Out</h4>
   <p class="Header__text">Enough work for today?</p>
   <form method="POST" action="../helper/SessionDestroy.php">
-    <input type="submit" class="button" value="Log Out">
+    <input type="submit" class="button" id="button-logout" value="Log Out">
   </form>
 </div>

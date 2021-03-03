@@ -58,7 +58,7 @@
   <input type="hidden" id="id-employee" name="employee-id" value="">
 
   <div class="Calendar__buttonsBox">
-    <input type="submit" class="button" value="Send" disabled>
+    <input type="submit" class="button" id="button-send" value="Send" disabled>
   </div>
 
 </form>

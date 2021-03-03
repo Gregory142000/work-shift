@@ -2,9 +2,10 @@ export default function $buttonSelectWork() {
   const $employeeLogin = document.getElementById('employee-login'),
         $messageLogOut = document.getElementById('Header-message-logOut'),
         $idEmployee = document.getElementById('id-employee'),
-        $buttons = document.querySelectorAll('.button[disabled]'),
+        $buttonSend = document.getElementById('button-send'),
         $selectButton = document.querySelectorAll('.button-select'),
         sessionId = $employeeLogin.getAttribute('value');
+        
   
   if(sessionId !== ''){
     sessionStorage.setItem('session', sessionId);
@@ -13,7 +14,7 @@ export default function $buttonSelectWork() {
     
     $idEmployee.value = sessionStorage.getItem('session');
 
-    $buttons.forEach((el) => el.removeAttribute('disabled'));
+    $buttonSend.removeAttribute('disabled');
 
     document.addEventListener('click', (e) => {
       $selectButton.forEach((el) => {

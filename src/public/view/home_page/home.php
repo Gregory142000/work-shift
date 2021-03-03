@@ -48,6 +48,8 @@ if(isset($_SESSION['access'])) {
   <img id="loader" src="../img/Spinner-1s-200px.svg" alt="Loader...">
 </section>
 
+<?php if($employee_id !== ''): ?>
 <section>
   <?= $this->insert('home_page/table_select_work'); ?>
 </section>
+<?php endif; ?>
