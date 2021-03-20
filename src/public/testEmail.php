@@ -1,3 +1,5 @@
 <?php
 
-echo '<h1>Hi, php</h1>';
+header("Content-tye: text/plain");
+
+print_r($_POST['envelope']);
