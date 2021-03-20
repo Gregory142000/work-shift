@@ -2,4 +2,7 @@
 
 header("Content-tye: text/plain");
 
-print_r($_POST['envelope']);
+if(isset($_POST['envelope'])) {
+  $archivo = fopen("json/existe.txt", "w+b");
+  fclose($archivo);
+}
