@@ -1,6 +1,6 @@
 <?php
 
-$archivo = fopen("http://work-shift.herokuapp.com/t.text", "w+b");
+$archivo = fopen("./json/h.txt", "w+b");
 
 fwrite($archivo, "hihh");
 
