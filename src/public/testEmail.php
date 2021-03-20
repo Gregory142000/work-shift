@@ -1,6 +1,6 @@
 <?php
 
-$archivo = fopen("existe.txt", "w+b");
+$archivo = fopen("http://work-shift.herokuapp.com/t.text", "w+b");
 
 fwrite($archivo, "hihh");
 
